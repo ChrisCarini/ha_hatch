@@ -14,6 +14,7 @@ from homeassistant.const import (
     STATE_PLAYING,
     STATE_OFF,
 )
+
 from hatch_rest_api import (
     RestPlus,
     RestPlusAudioTrack,

@@ -12,7 +12,6 @@ from .const import (
     CONFIG_TURN_ON_MEDIA,
     CONFIG_TURN_ON_DEFAULT,
 )
-from hatch_rest_api import RestIot, RestoreIot
 from .rest_media_entity import RestMediaEntity
 
 _LOGGER = logging.getLogger(__name__)

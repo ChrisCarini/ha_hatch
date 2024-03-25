@@ -1,6 +1,6 @@
 
 # Configuration Constants
-DOMAIN: str = "ha_hatch"
+DOMAIN: str = "ha_hatch_ChrisCarini_MOD"
 
 # Integration Setting Constants
 CONFIG_FLOW_VERSION: int = 2

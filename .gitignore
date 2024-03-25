@@ -27,3 +27,8 @@ tts
 scenes.yaml
 scripts.yaml
 secrets.yaml
+
+venv/
+activate
+my_codezz.py
+*-aws_mqtt.log
