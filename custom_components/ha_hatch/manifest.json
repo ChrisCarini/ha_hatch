@@ -1,11 +1,11 @@
 {
-  "domain": "ha_hatch",
-  "name": "Hatch Rest Mini/Plus",
-  "codeowners": ["@dahlb"],
+  "domain": "ha_hatch_ChrisCarini_MOD",
+  "name": "Hatch Rest Mini/Plus - ChrisCarini MOD",
+  "codeowners": ["@ChrisCarini"],
   "config_flow": true,
-  "documentation": "https://github.com/dahlb/ha_hatch",
+  "documentation": "https://github.com/ChrisCarini/ha_hatch",
   "iot_class": "cloud_push",
-  "issue_tracker": "https://github.com/dahlb/ha_hatch/issues",
+  "issue_tracker": "https://github.com/ChrisCarini/ha_hatch/issues",
   "requirements": ["hatch_rest_api==1.25.0"],
-  "version": "1.19.0"
+  "version": "1.19.0.1"
 }
