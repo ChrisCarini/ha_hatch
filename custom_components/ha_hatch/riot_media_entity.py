@@ -25,7 +25,8 @@ class RiotMediaEntity(RestEntity, MediaPlayerEntity):
 
     def __init__(self, rest_device: RestIot | RestoreIot):
         super().__init__(rest_device, "Media Player")
-        self._attr_sound_mode_list = self.rest_device.favorite_names() + [x.name for x in REST_IOT_AUDIO_TRACKS[1:]]
+        self.favorites = self.rest_device.favorite_names()
+        self._attr_sound_mode_list = self.favorites + [x.name for x in REST_IOT_AUDIO_TRACKS[1:]]
         self._attr_supported_features = (
             MediaPlayerEntityFeature.PLAY
             | MediaPlayerEntityFeature.STOP
@@ -75,9 +76,15 @@ class RiotMediaEntity(RestEntity, MediaPlayerEntity):
         )
 
     def select_sound_mode(self, sound_mode: str) -> None:
+        if sound_mode in self.favorites:
+            _LOGGER.debug(f'Setting favorite [{sound_mode}] on {self.rest_device.device_name}')
+            self.rest_device.set_favorite(sound_mode)
+            return
+
         track = self._find_track(track_name=sound_mode)
         if track is None:
             track = RIoTAudioTrack.NONE
+        _LOGGER.debug(f'Setting track [{track}] for sound_mode [{sound_mode}] on {self.rest_device.device_name}')
         self.rest_device.set_audio_track(track)
 
     def _find_source(self, source: str) -> str:
